@@ -88,7 +88,7 @@ export default class App extends Component {
         {images.length > 0 && <Button onClick={this.fetchImage} />}
 
         {isLoading && (
-          <Loader type="Circles" color="#00BFFF" height={100} width={100} timeout={3000} /> //3 secs
+          <Loader type="Circles" className={styles.loader} color="#00BFFF" height={100} width={100} timeout={3000} /> //3 secs
         )}
 
         {this.state.showModal && this.state.largeimage && (
