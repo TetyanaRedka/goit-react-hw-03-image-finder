@@ -51,14 +51,14 @@ export default class App extends Component {
           currentPage: prevState.currentPage + 1,
         })),
       )
-      .finally(() => this.setState({ isLoading: false }));
+      .finally(() => {
+        window.scrollTo({
+          top: document.documentElement.scrollHeight,
+          behavior: 'smooth',
+        });
 
-    if (this.state.currentPage > 2) {
-      window.scrollTo({
-        top: document.documentElement.scrollHeight,
-        behavior: 'smooth',
+        this.setState({ isLoading: false });
       });
-    }
   };
 
   openModal = url => {
@@ -93,10 +93,7 @@ export default class App extends Component {
 
         {this.state.showModal && this.state.largeimage && (
           <Modal onClose={this.closeModal}>
-            <img src={this.state.largeimage} height="450px" width="450px" alt="" />
-            <button type="button" onClick={this.closeModal}>
-              Закрыть модалку
-            </button>
+            <img src={this.state.largeimage} height="100%" width="100%" alt="" />
           </Modal>
         )}
       </div>

@@ -19,16 +19,14 @@ export default class Modal extends Component {
     }
   };
 
-  handleBackdropClick = e => {
-    if (e.currentTarget === e.target) {
-      this.props.onClose();
-    }
+  handleClick = () => {
+    this.props.onClose();
   };
 
   render() {
     return createPortal(
-      <div className={styles.ModalBackdrop} onClick={this.handleBackdropClick}>
-        <div className={styles.Modal}>{this.props.children}</div>
+      <div className={styles.ModalBackdrop} onClick={this.handleClick}>
+        <div className={styles.ModalContent}>{this.props.children}</div>
       </div>,
       modalRoot,
     );
