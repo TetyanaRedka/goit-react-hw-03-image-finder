@@ -7,8 +7,8 @@ import ImageGalleryItem from './ImageGalleryItem/ImageGalleryItem';
 const ImageGallery = ({ arrImages, onClick }) => {
   return (
     <ul className={styles.ImageGallery}>
-      {arrImages.map(image => (
-        <ImageGalleryItem key={image.id} url={image.webformatURL} largeImageURL={image.largeImageURL} onClick={onClick} />
+      {arrImages.map(({ id, webformatURL, largeImageURL }) => (
+        <ImageGalleryItem key={id} url={webformatURL} largeImageURL={largeImageURL} onClick={onClick} />
       ))}
     </ul>
   );

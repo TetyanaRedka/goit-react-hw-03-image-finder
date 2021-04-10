@@ -83,7 +83,7 @@ export default class App extends Component {
       <div className={styles.App}>
         <Searchbar onSubmit={this.onChangeQuery} />
 
-        <ImageGallery arrImages={this.state.images} onClick={this.openModal} />
+        <ImageGallery arrImages={images} onClick={this.openModal} />
 
         {images.length > 0 && <Button onClick={this.fetchImage} />}
 

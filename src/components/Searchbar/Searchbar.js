@@ -28,8 +28,8 @@ export default class Searchbar extends Component {
           <input
             className={styles.SearchFormInput}
             type="text"
-            autocomplete="off"
-            autofocus
+            autoComplete="off"
+            autoFocus
             placeholder="Search images and photos"
             value={this.state.query}
             onChange={this.handleChange}
