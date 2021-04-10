@@ -77,7 +77,7 @@ export default class App extends Component {
   };
 
   render() {
-    const { images, isLoading } = this.state;
+    const { images, isLoading, showModal, largeimage } = this.state;
 
     return (
       <div className={styles.App}>
@@ -91,9 +91,9 @@ export default class App extends Component {
           <Loader type="Circles" className={styles.loader} color="#00BFFF" height={100} width={100} timeout={3000} /> //3 secs
         )}
 
-        {this.state.showModal && this.state.largeimage && (
+        {showModal && largeimage && (
           <Modal onClose={this.closeModal}>
-            <img src={this.state.largeimage} height="100%" width="100%" alt="" />
+            <img src={largeimage} height="100%" width="100%" alt="" />
           </Modal>
         )}
       </div>
